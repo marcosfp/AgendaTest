@@ -10,6 +10,8 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -26,6 +28,11 @@ public class AgendaDaoExcel implements AgendaDao {
 
 	@Override
 	public boolean crearContactoPersona(ContactoPersona contacto) {
+		Pattern pat = Pattern.compile("[a-zA-Z]{5,15}");
+		Matcher mat = pat.matcher(contacto.getNombre());
+		if (!mat.matches()) {
+			return false;
+		}
 
 		// load the workbook
 		InputStream inp;
@@ -68,6 +75,15 @@ public class AgendaDaoExcel implements AgendaDao {
 
 	@Override
 	public boolean crearContactoEmpresa(ContactoEmpresa contacto) {
+		Pattern pat = Pattern.compile("[a-zA-Z]{3,20}");
+		Matcher mat = pat.matcher(contacto.getNombre());
+		
+		Pattern pat2 = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@"
+                + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+		Matcher mat2 = pat.matcher(contacto.getPagweb());
+		if (!mat.matches() && !mat2.matches()) {
+			return false;
+		}
 		InputStream inp;
 		try {
 			inp = new FileInputStream(PROJECT_PATH + SRC_PATH);
