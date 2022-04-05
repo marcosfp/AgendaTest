@@ -18,7 +18,7 @@ public class TestAgendaDaoArrayList {
     @Test
     public void TestCrearContactoPersona (){
     
-    ContactoPersona CP1 = new ContactoPersona("11221999", "Bill Gates", "356562883");
+    ContactoPersona CP1 = new ContactoPersona("11221999", "BillGates", "+34 981 666666");
         AgendaDaoArrayList dao = new AgendaDaoArrayList();
 
         //Verifico que la agenda esta vacia
