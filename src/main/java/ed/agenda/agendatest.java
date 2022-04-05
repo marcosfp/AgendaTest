@@ -5,6 +5,7 @@
 package ed.agenda;
 
 import ed.agenda.dao.AgendaDao;
+import ed.agenda.dao.AgendaDaoArrayList;
 import ed.agenda.dao.AgendaDaoExcel;
 import ed.agenda.entidades.Contacto;
 import ed.agenda.entidades.ContactoEmpresa;
@@ -23,7 +24,7 @@ public class agendatest {
 
     public static void main(String[] args) {
 
-        AgendaDao agenda = new AgendaDaoExcel();
+        AgendaDao agenda = new AgendaDaoArrayList();
 
         ContactoPersona CP1 = new ContactoPersona("11221999", "Bill Gates", "356562883");
         ContactoPersona CP2 = new ContactoPersona("11221999", "Steve Jobs", "126588983");
