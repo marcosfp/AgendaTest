@@ -25,4 +25,7 @@ public interface AgendaDao {
         public boolean eliminarContactoPorNombre(String nombre) throws ContactoNoEncontradoException;
         
 	public void mostrarTrabajadoresEmpresa(String nombre)throws ContactoNoEncontradoException;
+        
+        public void anadirTrabajadorAEmpresa(ContactoEmpresa ce, ContactoPersona cp);
+
 }

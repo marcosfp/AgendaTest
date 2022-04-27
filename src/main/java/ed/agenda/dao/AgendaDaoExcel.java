@@ -252,5 +252,10 @@ public class AgendaDaoExcel implements AgendaDao {
     public void mostrarTrabajadoresEmpresa(String nombre) throws ContactoNoEncontradoException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    @Override
+    public void anadirTrabajadorAEmpresa(ContactoEmpresa ce, ContactoPersona cp) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 	
 }
