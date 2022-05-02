@@ -34,7 +34,7 @@ public class AgendaDaoArrayList implements AgendaDao {
 
     @Override
     public boolean crearContactoPersona(ContactoPersona c) {
-        Pattern pat = Pattern.compile("[a-zA-Z]{3,15}");
+        Pattern pat = Pattern.compile("[a-zA-Z ]{3,15}");
         Matcher mat = pat.matcher(c.getNombre());
 
         Pattern pat2 = Pattern.compile("/\\+34 9[0-9]{1,2} [0-9]{7}/");
